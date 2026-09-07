@@ -161,3 +161,10 @@ V24 SOUND / TOP LAB / FAN ART / COPY UPDATE
 - Removed the unsupported X hashtag-search timeline embed and kept a reliable OPEN ON X live-search gateway. An in-page live hashtag feed requires an X API/backend integration.
 
 V25: Removed TOP LAB blur/frame, moved hero background ~3% upward, removed visible FAN ART section pending future community redesign, and added interactive 猿 / 戌 GLB objects.
+
+V27 UPDATE
+- Featured 3D: assets/oni-0907.glb
+- Existing assets/ushi.glb moved to OBJECTS as 丑
+- STARGET LAB @stargetlab enabled for YouTube stats
+- GitHub Actions workflow included under .github/workflows/
+- YouTube updater included under scripts/

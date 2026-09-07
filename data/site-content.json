@@ -2,7 +2,7 @@
   "schema_version": 2,
   "site": {
     "name": "STARGET",
-    "content_updated_at": "2026-09-07T16:51:00+09:00",
+    "content_updated_at": "2026-09-07T19:45:00+09:00",
     "home_limits": {
       "films": 4,
       "objects": 4,
@@ -33,7 +33,7 @@
         "channel_id": null,
         "published": true,
         "statistics": {
-          "subscribers": null,
+          "subscribers": 1,
           "video_count": null,
           "view_count": null,
           "updated_at": null
@@ -43,8 +43,8 @@
   },
   "featured_3d": {
     "id": "FEATURED_001",
-    "title": "ONI / USHI",
-    "model_url": "assets/ushi.glb",
+    "title": "ONI",
+    "model_url": "assets/oni-0907.glb",
     "poster_url": "assets/model-poster.png",
     "published": true
   },
@@ -133,12 +133,12 @@
     },
     {
       "id": "OBJ_003",
-      "title": "Notitle",
-      "model_url": null,
+      "title": "丑",
+      "model_url": "assets/ushi.glb",
       "poster_url": null,
-      "description": null,
-      "year": null,
-      "published": false,
+      "description": "ETO / USHI / 3D OBJECT",
+      "year": "2026",
+      "published": true,
       "sort_order": 3
     },
     {
