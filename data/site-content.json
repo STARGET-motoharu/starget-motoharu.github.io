@@ -1,0 +1,221 @@
+{
+  "schema_version": 2,
+  "site": {
+    "name": "STARGET",
+    "content_updated_at": "2026-09-07T16:51:00+09:00",
+    "home_limits": {
+      "films": 4,
+      "objects": 4,
+      "projects": 3
+    }
+  },
+  "youtube": {
+    "channels": [
+      {
+        "key": "starget",
+        "label": "STARGET",
+        "url": "https://www.youtube.com/@starget_motoharu",
+        "handle": "@starget_motoharu",
+        "channel_id": null,
+        "published": true,
+        "statistics": {
+          "subscribers": 275,
+          "video_count": null,
+          "view_count": null,
+          "updated_at": null
+        }
+      },
+      {
+        "key": "starget_lab",
+        "label": "STARGET LAB.",
+        "url": "https://www.youtube.com/@stargetlab",
+        "handle": "@stargetlab",
+        "channel_id": null,
+        "published": true,
+        "statistics": {
+          "subscribers": null,
+          "video_count": null,
+          "view_count": null,
+          "updated_at": null
+        }
+      }
+    ]
+  },
+  "featured_3d": {
+    "id": "FEATURED_001",
+    "title": "ONI / USHI",
+    "model_url": "assets/ushi.glb",
+    "poster_url": "assets/model-poster.png",
+    "published": true
+  },
+  "films": [
+    {
+      "id": "FILM_YT_001",
+      "title": "黒龍杯 - Pokémon UNITE Community Tournament",
+      "media_type": "youtube",
+      "media_url": "https://www.youtube.com/watch?v=jjrYiZsbRvA",
+      "poster_url": "https://i.ytimg.com/vi/jjrYiZsbRvA/maxresdefault.jpg",
+      "external_url": "https://youtu.be/jjrYiZsbRvA?si=oiOHwREfPB81gYkx",
+      "duration": null,
+      "year": 2026,
+      "published": true,
+      "sort_order": 1
+    },
+    {
+      "id": "FILM_001",
+      "title": "Notitle",
+      "media_type": "none",
+      "media_url": null,
+      "poster_url": null,
+      "external_url": null,
+      "duration": null,
+      "year": null,
+      "published": true,
+      "sort_order": 2
+    },
+    {
+      "id": "FILM_002",
+      "title": "Notitle",
+      "media_type": "none",
+      "media_url": null,
+      "poster_url": null,
+      "external_url": null,
+      "duration": null,
+      "year": null,
+      "published": true,
+      "sort_order": 3
+    },
+    {
+      "id": "FILM_003",
+      "title": "Notitle",
+      "media_type": "none",
+      "media_url": null,
+      "poster_url": null,
+      "external_url": null,
+      "duration": null,
+      "year": null,
+      "published": true,
+      "sort_order": 4
+    },
+    {
+      "id": "FILM_004",
+      "title": "Notitle",
+      "media_type": "none",
+      "media_url": null,
+      "poster_url": null,
+      "external_url": null,
+      "duration": null,
+      "year": null,
+      "published": true,
+      "sort_order": 5
+    }
+  ],
+  "objects": [
+    {
+      "id": "OBJ_001",
+      "title": "猿",
+      "model_url": "assets/eto-saru.glb",
+      "poster_url": null,
+      "description": "ETO / SARU / 3D OBJECT",
+      "year": "2026",
+      "published": true,
+      "sort_order": 1
+    },
+    {
+      "id": "OBJ_002",
+      "title": "戌",
+      "model_url": "assets/eto-inu.glb",
+      "poster_url": null,
+      "description": "ETO / INU / 3D OBJECT",
+      "year": "2026",
+      "published": true,
+      "sort_order": 2
+    },
+    {
+      "id": "OBJ_003",
+      "title": "Notitle",
+      "model_url": null,
+      "poster_url": null,
+      "description": null,
+      "year": null,
+      "published": false,
+      "sort_order": 3
+    },
+    {
+      "id": "OBJ_004",
+      "title": "Notitle",
+      "model_url": null,
+      "poster_url": null,
+      "description": null,
+      "year": null,
+      "published": false,
+      "sort_order": 4
+    }
+  ],
+  "projects": [
+    {
+      "id": "PROJECT_001",
+      "title": "黒龍杯",
+      "year": 2026,
+      "categories": [
+        "EVENT",
+        "WEB",
+        "BROADCAST"
+      ],
+      "url": "https://starget-motoharu.github.io/Kokuryu-hai/",
+      "status": "live",
+      "published": true,
+      "sort_order": 1
+    }
+  ],
+  "sound": [
+    {
+      "id": "SOUND_001",
+      "title": "OWARIN1",
+      "mp3_url": "assets/OWARIN1.mp3",
+      "published": true,
+      "sort_order": 1
+    },
+    {
+      "id": "SOUND_002",
+      "title": "OWARIN2",
+      "mp3_url": "assets/OWARIN2.mp3",
+      "published": true,
+      "sort_order": 2
+    },
+    {
+      "id": "SOUND_003",
+      "title": "TOMOKORE",
+      "mp3_url": "assets/TOMOKORE.mp3",
+      "published": true,
+      "sort_order": 3
+    },
+    {
+      "id": "SOUND_004",
+      "title": "TAIKIRE-TU",
+      "mp3_url": "assets/タイキレーツ＿待機画面＿BGM.mp3",
+      "published": true,
+      "sort_order": 4
+    }
+  ],
+  "live_visual": {
+    "next_live": null,
+    "latest_video": null,
+    "current_project": {
+      "label": "STARGET WEBSITE",
+      "status": "IN DEVELOPMENT"
+    }
+  },
+  "contact": {
+    "form_url": null,
+    "email": null,
+    "availability": "AVAILABLE FOR SELECTED PROJECTS",
+    "capabilities": [
+      "3D / CG",
+      "MOTION DESIGN",
+      "OPENING / TITLE FILMS",
+      "VISUAL DIRECTION",
+      "DIGITAL / WEB VISUALS"
+    ]
+  }
+}
