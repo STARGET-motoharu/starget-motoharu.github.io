@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 
 const API_KEY = process.env.YOUTUBE_API_KEY;
-const FILE = 'data/site-content.json';
+const FILE = 'kairo/data/site-content.json';
 
 if (!API_KEY) {
   throw new Error('YOUTUBE_API_KEY is not configured in GitHub Actions secrets.');
@@ -15,7 +15,7 @@ const data = JSON.parse(fs.readFileSync(FILE, 'utf8'));
 const channels = data?.youtube?.channels;
 
 if (!Array.isArray(channels) || channels.length === 0) {
-  throw new Error('No YouTube channels are configured in data/site-content.json.');
+  throw new Error('No YouTube channels are configured in kairo/data/site-content.json.');
 }
 
 let updatedCount = 0;

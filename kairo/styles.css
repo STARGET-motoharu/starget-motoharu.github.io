@@ -948,3 +948,51 @@ img{-webkit-user-drag:none;user-drag:none}
 .archive-object .archive-item-meta{position:absolute;left:0;right:0;bottom:0;z-index:4;background:linear-gradient(180deg,transparent,rgba(0,0,0,.78) 45%,rgba(0,0,0,.94));color:#fff;padding-top:70px}
 .archive-object .archive-item-meta small{color:rgba(255,255,255,.48)}
 .archive-object .archive-badge{border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.72)}
+
+
+/* V28 — WELCOME GATE / KAIRO PASSAGE */
+html.welcome-locked,html.welcome-locked body{overflow:hidden!important}
+.welcome-gate{position:fixed;inset:0;z-index:999999;background:#050505;color:#f4f4f0;overflow:hidden;isolation:isolate;transition:opacity .85s cubic-bezier(.22,.8,.2,1),visibility .85s}
+.welcome-grid{position:absolute;inset:-10%;background-image:linear-gradient(rgba(230,0,24,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(230,0,24,.09) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(circle at 78% 62%,#000 0,rgba(0,0,0,.72) 23%,transparent 62%);opacity:.42;transform:perspective(900px) rotateX(62deg) translateY(24%);transform-origin:center bottom;animation:welcomeGridDrift 14s linear infinite}
+.welcome-scan{position:absolute;left:0;right:0;top:-5%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,0,28,.85),transparent);box-shadow:0 0 18px rgba(255,0,28,.45);animation:welcomeScan 7s ease-in-out infinite}
+.welcome-mark{position:absolute;left:4vw;top:4vw;width:10px;height:10px;border:1px solid rgba(255,0,28,.8);transform:rotate(45deg)}
+.welcome-mark span{position:absolute;inset:2px;background:#ef001e}
+.welcome-center{position:absolute;left:6vw;top:50%;transform:translateY(-50%);display:grid;gap:9px}
+.welcome-center .welcome-index,.welcome-center small,.welcome-meta,.welcome-access label,.welcome-status{font:600 9px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.22em;color:rgba(255,255,255,.42)}
+.welcome-center strong{font:800 clamp(52px,8.4vw,142px)/.82 Arial,Helvetica,sans-serif;letter-spacing:-.075em}
+.welcome-center small{letter-spacing:.35em;color:rgba(255,255,255,.6)}
+.welcome-meta{position:absolute;left:6vw;bottom:5.5vw;display:flex;gap:28px}
+.welcome-access{position:absolute;right:4.2vw;bottom:4.2vw;width:min(300px,45vw);display:grid;gap:10px}
+.welcome-access label{text-align:right;color:#ef001e}
+.welcome-input-line{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid rgba(255,255,255,.4);transition:border-color .5s,box-shadow .5s}
+.welcome-input-line input{width:100%;min-width:0;padding:11px 8px;background:transparent;border:0;outline:0;color:#fff;font:600 17px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.48em;text-align:right;-webkit-text-security:disc}
+.welcome-input-line button{border:0;background:transparent;color:#fff;padding:0 0 0 16px;font:700 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;cursor:pointer;transition:color .5s,transform .5s}
+.welcome-input-line button:hover{color:#ef001e;transform:translateX(3px)}
+.welcome-status{text-align:right;min-height:12px}
+.welcome-denied .welcome-input-line{border-color:#ef001e;box-shadow:0 8px 30px rgba(239,0,30,.14)}
+.welcome-denied .welcome-access{animation:welcomeDenied .34s linear 1}
+.welcome-granted{pointer-events:none;opacity:0}
+.welcome-granted .welcome-center{transform:translateY(-50%) scale(.985);filter:blur(9px);transition:transform .9s,filter .9s}
+.welcome-granted .welcome-grid{opacity:0;transform:perspective(900px) rotateX(62deg) translateY(30%) scale(1.08);transition:opacity .9s,transform .9s}
+@keyframes welcomeGridDrift{50%{background-position:21px 42px,21px 42px}}
+@keyframes welcomeScan{0%,12%{top:-5%;opacity:0}28%{opacity:.8}75%{opacity:.22}100%{top:105%;opacity:0}}
+@keyframes welcomeDenied{25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+
+.kairo-gate-section{position:relative;padding:clamp(90px,11vw,180px) 4vw;background:#070707;color:#f4f4f0;overflow:hidden}
+.kairo-gate-shell{position:relative;max-width:1460px;margin:0 auto;border:1px solid rgba(255,255,255,.13);min-height:470px;overflow:hidden;background:radial-gradient(circle at 78% 45%,rgba(225,0,25,.085),transparent 29%),#090909}
+.kairo-gate-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(225,0,25,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(225,0,25,.06) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(90deg,transparent 0,#000 65%);opacity:.65;transition:transform 1.8s cubic-bezier(.2,.7,.2,1),opacity 1.4s}
+.kairo-gate-shell:hover .kairo-gate-grid{transform:translate3d(12px,-8px,0);opacity:.9}
+.kairo-gate-head{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid rgba(255,255,255,.1);font:700 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;color:rgba(255,255,255,.48)}
+.kairo-lock-state{display:flex;align-items:center;gap:9px;color:#ef001e}.kairo-lock-state i{width:6px;height:6px;border-radius:50%;background:#ef001e;box-shadow:0 0 18px rgba(239,0,30,.75)}
+.kairo-gate-main{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:7vw;align-items:end;min-height:405px;padding:clamp(38px,6vw,86px)}
+.kairo-title-block{align-self:center}.kairo-micro{font:700 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.24em;color:#ef001e}
+.kairo-title-block h2{margin:16px 0 18px;font:800 clamp(68px,10vw,160px)/.72 Arial,Helvetica,sans-serif;letter-spacing:-.075em}.kairo-title-block p{max-width:520px;margin:0;color:rgba(255,255,255,.5);font-size:12px;line-height:1.75;letter-spacing:.07em}
+.kairo-access-form{display:grid;gap:13px;align-self:end}.kairo-access-form label,.kairo-key-meta{font:700 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;color:rgba(255,255,255,.42)}
+.kairo-key-row{display:grid;grid-template-columns:1fr auto;border-bottom:1px solid rgba(255,255,255,.3);transition:border-color .8s,box-shadow .8s}.kairo-key-row:focus-within{border-color:#ef001e;box-shadow:0 12px 34px rgba(239,0,30,.09)}
+.kairo-key-row input{min-width:0;padding:14px 2px;border:0;outline:0;background:transparent;color:#fff;font:600 15px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.17em}.kairo-key-row input::placeholder{color:rgba(255,255,255,.18)}
+.kairo-key-row button{border:0;background:transparent;color:#fff;font:700 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.15em;padding-left:22px;cursor:pointer;transition:color .7s,transform .7s}.kairo-key-row button:hover{color:#ef001e;transform:translateX(4px)}
+.kairo-key-meta{display:flex;justify-content:space-between;gap:16px}.kairo-key-meta span:first-child{color:rgba(255,255,255,.58)}.kairo-pending .kairo-key-row{border-color:#ef001e;animation:kairoPulse .9s ease}
+@keyframes kairoPulse{50%{box-shadow:0 0 45px rgba(239,0,30,.16)}}
+
+@media(max-width:760px){.welcome-center{left:7vw;top:43%}.welcome-center strong{font-size:18vw}.welcome-meta{left:7vw;bottom:25vw;flex-direction:column;gap:7px}.welcome-access{right:7vw;bottom:8vw;width:62vw}.kairo-gate-main{grid-template-columns:1fr;gap:54px;padding:44px 28px 36px}.kairo-gate-shell{min-height:570px}.kairo-title-block h2{font-size:24vw}.kairo-gate-head{padding:18px 20px}.kairo-key-meta{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.welcome-grid,.welcome-scan{animation:none}.welcome-gate,.kairo-gate-grid{transition:none}}
