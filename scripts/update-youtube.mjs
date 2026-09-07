@@ -23,13 +23,6 @@ let updatedCount = 0;
 for (const channel of channels) {
   if (channel.published === false) continue;
 
-  // V26 contains @stargetlab as a temporary LAB placeholder.
-  // Do not risk showing statistics from an unrelated channel until the real LAB URL/handle is confirmed.
-  if (channel.key === 'starget_lab' && channel.handle === '@stargetlab') {
-    console.warn('[YouTube] STARGET LAB. skipped: replace the temporary @stargetlab handle with the real channel handle first.');
-    continue;
-  }
-
   const params = new URLSearchParams({
     part: 'statistics',
     key: API_KEY,
