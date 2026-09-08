@@ -1008,3 +1008,8 @@ html.welcome-locked,html.welcome-locked body{overflow:hidden!important}
 .kairo-in-button:hover span{transform:translate(7px,-7px)}
 .kairo-in-meta{display:flex;justify-content:space-between;gap:16px}.kairo-in-meta span:first-child{color:rgba(255,255,255,.62)}
 @media(max-width:760px){.kairo-in-button{font-size:11vw;letter-spacing:.12em}.kairo-in-meta{font-size:8px}}
+
+/* V34 — secondary Welcome access gate */
+.welcome-secondary .welcome-mark{box-shadow:0 0 18px rgba(239,0,30,.22)}
+.welcome-secondary .welcome-input-line{border-bottom-color:rgba(239,0,30,.6)}
+.welcome-secondary .welcome-status{color:rgba(255,255,255,.56)}

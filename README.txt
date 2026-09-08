@@ -29,3 +29,15 @@ V33 KAIRO SOUND SPACE UPDATE
 - RECORD and RESET are directly below the keyboard.
 - Keyboard type is lighter with increased spacing.
 - Left/right abstract objects now drift, breathe and animate particles.
+
+V34 WELCOME ACCESS UPDATE
+- Welcome access is now a two-step lock.
+- ACCESS / 01: 5150
+- ACCESS / 02: S-0930 (alphanumeric + hyphen input)
+- The site opens only after both codes are accepted in order.
+
+V35 ACCESS FLOW
+- ACCESS 01: existing 5150 gate (unchanged visual)
+- ACCESS 02: new STARGET // ORIGIN puzzle gate
+- ACCESS 03: former secondary gate using S-0930
+- Successful ACCESS 03 opens kairo/index.html

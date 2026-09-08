@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#050505" />
-  <meta name="description" content="STARGET access gate." />
-  <title>STARGET — ACCESS 01</title>
+  <meta name="description" content="STARGET final access gate." />
+  <title>STARGET — ACCESS 03</title>
   <link rel="stylesheet" href="kairo/styles.css?v=35" />
   <style>
     html,body{margin:0;min-height:100%;background:#050505}
@@ -14,53 +14,50 @@
   </style>
 </head>
 <body>
-  <div id="welcomeGate" class="welcome-gate" role="dialog" aria-modal="true" aria-label="STARGET welcome access">
+  <div id="welcomeGate" class="welcome-gate welcome-secondary" role="dialog" aria-modal="true" aria-label="STARGET final access">
     <div class="welcome-grid" aria-hidden="true"></div>
     <div class="welcome-scan" aria-hidden="true"></div>
     <div class="welcome-mark" aria-hidden="true"><span></span></div>
     <div class="welcome-center">
-      <span class="welcome-index">ENTRY / 000</span>
+      <span class="welcome-index">ENTRY / 002</span>
       <strong>STARGET</strong>
       <small>DIGITAL CULTURE / TOKYO</small>
     </div>
     <div class="welcome-meta" aria-hidden="true">
-      <span>GATE / ST-01</span>
-      <span>PRIMARY ACCESS</span>
+      <span>GATE / ST-03</span>
+      <span>FINAL ACCESS</span>
     </div>
     <form id="welcomeForm" class="welcome-access" autocomplete="off">
-      <label for="welcomeCode">ACCESS / 01</label>
+      <label for="welcomeCode">ACCESS / 03</label>
       <div class="welcome-input-line">
-        <input id="welcomeCode" name="welcomeCode" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Enter first access code" />
+        <input id="welcomeCode" name="welcomeCode" type="password" inputmode="text" pattern="[A-Za-z0-9-]*" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Enter final alphanumeric access code" />
         <button type="submit" aria-label="Enter STARGET">ENTER ↗</button>
       </div>
-      <span id="welcomeStatus" class="welcome-status">4 DIGIT / REQUIRED</span>
+      <span id="welcomeStatus" class="welcome-status">A–Z / 0–9 / - / REQUIRED</span>
     </form>
   </div>
   <script>
     (()=>{
-      const ACCESS_CODE='5150';
+      const ACCESS_CODE='S-0930';
       const gate=document.querySelector('#welcomeGate');
       const form=document.querySelector('#welcomeForm');
       const input=document.querySelector('#welcomeCode');
       const status=document.querySelector('#welcomeStatus');
 
       const deny=()=>{
-        gate?.classList.remove('welcome-denied');
-        void gate?.offsetWidth;
-        gate?.classList.add('welcome-denied');
-        if(status)status.textContent='ACCESS 01 DENIED';
+        gate?.classList.remove('welcome-denied');void gate?.offsetWidth;gate?.classList.add('welcome-denied');
+        if(status)status.textContent='ACCESS 03 DENIED';
         if(input){input.value='';input.focus();}
-        window.setTimeout(()=>{if(status)status.textContent='4 DIGIT / REQUIRED';},1100);
+        window.setTimeout(()=>{if(status)status.textContent='A–Z / 0–9 / - / REQUIRED';},1100);
       };
-
       window.setTimeout(()=>input?.focus(),450);
-      input?.addEventListener('input',()=>{input.value=input.value.replace(/\D/g,'');});
+      input?.addEventListener('input',()=>{input.value=input.value.toUpperCase().replace(/[^A-Z0-9-]/g,'');});
       form?.addEventListener('submit',(event)=>{
         event.preventDefault();
-        if((input?.value||'').trim()!==ACCESS_CODE){deny();return;}
+        if((input?.value||'').trim().toUpperCase()!==ACCESS_CODE){deny();return;}
         gate?.classList.add('welcome-granted');
-        if(status)status.textContent='ACCESS 01 GRANTED / ORIGIN';
-        window.setTimeout(()=>{window.location.href='origin.html';},650);
+        if(status)status.textContent='ACCESS 03 GRANTED / ENTERING';
+        window.setTimeout(()=>{window.location.href='kairo/index.html';},650);
       });
     })();
   </script>
