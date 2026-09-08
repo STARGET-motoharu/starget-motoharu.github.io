@@ -1,0 +1,346 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://starget.example/schema/site-content.schema.json",
+  "title": "STARGET Site Content",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "site",
+    "youtube",
+    "films",
+    "objects",
+    "projects",
+    "sound",
+    "live_visual",
+    "contact"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "home_limits"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "content_updated_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "home_limits": {
+          "type": "object",
+          "properties": {
+            "films": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "objects": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "projects": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "films",
+            "objects",
+            "projects"
+          ]
+        }
+      }
+    },
+    "youtube": {
+      "type": "object",
+      "required": [
+        "channels"
+      ],
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "key",
+              "label",
+              "url",
+              "handle",
+              "statistics",
+              "published"
+            ],
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "handle": {
+                "type": "string"
+              },
+              "channel_id": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "published": {
+                "type": "boolean"
+              },
+              "statistics": {
+                "type": "object",
+                "required": [
+                  "subscribers",
+                  "video_count",
+                  "view_count",
+                  "updated_at"
+                ],
+                "properties": {
+                  "subscribers": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "video_count": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "view_count": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "updated_at": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "films": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "media_type",
+          "published",
+          "sort_order"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "media_type": {
+            "enum": [
+              "none",
+              "mp4",
+              "webm",
+              "youtube",
+              "vimeo"
+            ]
+          },
+          "media_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "poster_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "external_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "duration": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "published": {
+            "type": "boolean"
+          },
+          "sort_order": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "published",
+          "sort_order"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "model_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "poster_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "published": {
+            "type": "boolean"
+          },
+          "sort_order": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "published",
+          "sort_order"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "year": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "published": {
+            "type": "boolean"
+          },
+          "sort_order": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "sound": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "mp3_url",
+          "published",
+          "sort_order"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "mp3_url": {
+            "type": "string"
+          },
+          "published": {
+            "type": "boolean"
+          },
+          "sort_order": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "live_visual": {
+      "type": "object"
+    },
+    "contact": {
+      "type": "object"
+    }
+  }
+}
