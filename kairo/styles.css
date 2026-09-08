@@ -996,3 +996,15 @@ html.welcome-locked,html.welcome-locked body{overflow:hidden!important}
 
 @media(max-width:760px){.welcome-center{left:7vw;top:43%}.welcome-center strong{font-size:18vw}.welcome-meta{left:7vw;bottom:25vw;flex-direction:column;gap:7px}.welcome-access{right:7vw;bottom:8vw;width:62vw}.kairo-gate-main{grid-template-columns:1fr;gap:54px;padding:44px 28px 36px}.kairo-gate-shell{min-height:570px}.kairo-title-block h2{font-size:24vw}.kairo-gate-head{padding:18px 20px}.kairo-key-meta{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.welcome-grid,.welcome-scan{animation:none}.welcome-gate,.kairo-gate-grid{transition:none}}
+
+/* V30 — KAIRO is open; the former access-key form is replaced by a direct IN passage. */
+.kairo-open-state{color:#f4f4f0}
+.kairo-open-state i{background:#ef001e;box-shadow:0 0 18px rgba(239,0,30,.75)}
+.kairo-in-panel{align-self:end;display:grid;gap:12px}
+.kairo-in-label,.kairo-in-meta{font:700 9px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;color:rgba(255,255,255,.42)}
+.kairo-in-button{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 0 16px;border-bottom:1px solid rgba(255,255,255,.32);color:#fff;text-decoration:none;font:500 clamp(28px,3.1vw,48px)/1 "Helvetica Neue","Avenir Next",Arial,Helvetica,sans-serif;letter-spacing:.12em;transition:border-color .65s,color .65s,letter-spacing .9s cubic-bezier(.16,.76,.18,1)}
+.kairo-in-button span{font:500 22px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:0;transition:transform .7s cubic-bezier(.2,.75,.2,1)}
+.kairo-in-button:hover{color:#ef001e;border-color:#ef001e;letter-spacing:.18em}
+.kairo-in-button:hover span{transform:translate(7px,-7px)}
+.kairo-in-meta{display:flex;justify-content:space-between;gap:16px}.kairo-in-meta span:first-child{color:rgba(255,255,255,.62)}
+@media(max-width:760px){.kairo-in-button{font-size:11vw;letter-spacing:.12em}.kairo-in-meta{font-size:8px}}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#7f918e" />
+  <meta name="description" content="KAIRO — 15 second interactive sound loop." />
+  <title>KAIRO — 15 SEC SOUND LOOP</title>
+  <link rel="stylesheet" href="in.css?v=33" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="kairo-header">
+    <a class="brand" href="./" aria-label="Back to STARGET home">
+      <strong>STARGET</strong><span>KAIRO / SOUND SPACE</span>
+    </a>
+    <div class="header-meta"><span>15 SEC LOOP</span><span>NO FILE SAVED</span></div>
+    <a class="out-link" href="./" aria-label="Back to STARGET home">BACK TO HP ↙</a>
+  </header>
+
+  <main class="sound-stage">
+    <div class="totem totem-left" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="totem totem-right" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="orbit-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+
+    <section class="instrument" aria-labelledby="pageTitle">
+      <div class="instrument-head">
+        <span class="index">K / 015</span>
+        <div>
+          <h1 id="pageTitle">KAIRO</h1>
+          <p>KEYBOARD SOUND LOOP</p>
+        </div>
+        <span id="clock" class="clock" aria-label="Tokyo time">--:--:--</span>
+      </div>
+
+      <div class="pad-shell">
+        <div id="padGrid" class="pad-grid" role="group" aria-label="A to Z and 0 to 9 sound keyboard"></div>
+      </div>
+
+      <div class="controls" aria-label="Recording controls">
+        <button id="recordButton" class="control control-record" type="button"><span>RECORD</span><small>15 SEC</small></button>
+        <button id="resetButton" class="control control-reset" type="button"><span>RESET</span><small>SPACE KEY</small></button>
+      </div>
+
+      <div class="status-strip">
+        <div class="status-center"><span id="statusDot"></span><strong id="statusText">READY / PRESS A–Z OR 0–9</strong></div>
+        <span class="event-indicator"><b id="eventCount">0</b> EVENTS</span>
+      </div>
+
+      <div class="timeline-shell" aria-label="15 second recording timeline">
+        <div class="timeline-head">
+          <span id="timelineState">READY</span>
+          <span>15 SEC LOOP</span>
+          <span id="timeReadout">00.0 / 15.0</span>
+        </div>
+        <canvas id="timelineCanvas"></canvas>
+        <div class="timeline-scale" aria-hidden="true"><span>00</span><span>03</span><span>06</span><span>09</span><span>12</span><span>15</span></div>
+      </div>
+
+      <div class="help-row">
+        <span>PC KEYBOARD / CLICK</span>
+        <span>RECORD → PLAY FOR 15 SEC → AUTO LOOP</span>
+        <span>SPACE = RESET</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="in.js?v=33"></script>
+</body>
+</html>

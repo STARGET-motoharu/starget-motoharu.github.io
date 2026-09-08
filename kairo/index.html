@@ -6,9 +6,8 @@
   <meta name="theme-color" content="#f5f5f2" />
   <meta name="description" content="STARGET — Japan, reimagined through CG, design, motion and digital culture." />
   <title>STARGET — JAPAN, REIMAGINED.</title>
-  <script>if(sessionStorage.getItem('stargetWelcomeAccess')!=='1')location.replace('../');</script>
   <link rel="preload" href="assets/oni-0907.glb" as="fetch" crossorigin="anonymous" />
-  <link rel="stylesheet" href="styles.css?v=29" />
+  <link rel="stylesheet" href="styles.css?v=31" />
   <style>html:not(.site-ready) #menu{display:none!important}</style>
   <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin />
 </head>
@@ -36,7 +35,7 @@
       <a href="#projects"><span>06</span> PROJECTS</a>
       <a href="#sound"><span>07</span> SOUND</a>
       <a href="#livevisual"><span>08</span> LIVE VISUAL</a>
-      <a href="#kairo"><span>09</span> KAIRO / LOCKED</a>
+      <a href="#kairo"><span>09</span> KAIRO / IN</a>
       <a href="contact.html"><span>10</span> CONTACT</a>
     </div>
   </nav>
@@ -337,26 +336,23 @@
       <div class="kairo-gate-shell reveal">
         <div class="kairo-gate-grid" aria-hidden="true"></div>
         <div class="kairo-gate-head">
-          <span>09 / RESTRICTED PASSAGE</span>
-          <span class="kairo-lock-state"><i></i> LOCKED</span>
+          <span>09 / SOUND PASSAGE</span>
+          <span class="kairo-lock-state kairo-open-state"><i></i> OPEN</span>
         </div>
         <div class="kairo-gate-main">
           <div class="kairo-title-block">
-            <span class="kairo-micro">VR / AR / DIGITAL ACCESS</span>
+            <span class="kairo-micro">INTERACTIVE / 15 SEC LOOP</span>
             <h2>KAIRO</h2>
-            <p>A private passage to spatial experiments, objects and reward-only experiences.</p>
+            <p>An open passage to an experimental sound instrument. No additional access key is required.</p>
           </div>
-          <form id="kairoAccessForm" class="kairo-access-form" autocomplete="off">
-            <label for="kairoAccessKey">ACCESS KEY</label>
-            <div class="kairo-key-row">
-              <input id="kairoAccessKey" name="accessKey" type="password" placeholder="XXXX-XXXX-XXXX" aria-label="KAIRO access key" />
-              <button type="submit">VERIFY ↗</button>
+          <div class="kairo-in-panel">
+            <span class="kairo-in-label">ENTER SOUND SPACE</span>
+            <a class="kairo-in-button" href="in.html" aria-label="Enter KAIRO sound space">IN <span>↗</span></a>
+            <div class="kairo-in-meta">
+              <span>NO KEY REQUIRED</span>
+              <span>GATE / KR-01</span>
             </div>
-            <div class="kairo-key-meta">
-              <span id="kairoAccessStatus">KEY ISSUANCE / PENDING</span>
-              <span>GATE / KR-00</span>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </section>
@@ -403,8 +399,6 @@
     <div>© 20XX STARGET <span class="footer-dot"></span></div>
   </footer>
 
-  <script src="kairo-config.js?v=29"></script>
-  <script src="gate.js?v=29"></script>
-  <script src="script.js?v=29"></script>
+  <script src="script.js?v=31"></script>
 </body>
 </html>

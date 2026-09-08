@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#050505" />
   <meta name="description" content="STARGET access gate." />
   <title>STARGET — ACCESS</title>
-  <link rel="stylesheet" href="kairo/styles.css?v=29" />
+  <link rel="stylesheet" href="kairo/styles.css?v=31" />
   <style>
     html,body{margin:0;min-height:100%;background:#050505}
     body{min-height:100svh;overflow:hidden}
@@ -43,16 +43,23 @@
       const form=document.querySelector('#welcomeForm');
       const input=document.querySelector('#welcomeCode');
       const status=document.querySelector('#welcomeStatus');
-      sessionStorage.removeItem('stargetWelcomeAccess');
+
+      // The visual gate stays on the Welcome page, but entering the site does
+      // not depend on sessionStorage. This keeps the transition reliable in
+      // Safari, local preview, GitHub Pages and stricter privacy settings.
+      try { sessionStorage.removeItem('stargetWelcomeAccess'); } catch (_) {}
+
       window.setTimeout(()=>input?.focus(),450);
       form?.addEventListener('submit',(event)=>{
         event.preventDefault();
         const value=(input?.value||'').trim();
         if(value===ACCESS_CODE){
-          sessionStorage.setItem('stargetWelcomeAccess','1');
+          try { sessionStorage.setItem('stargetWelcomeAccess','1'); } catch (_) {}
           gate?.classList.add('welcome-granted');
-          if(status)status.textContent='ACCESS GRANTED / KAIRO';
-          window.setTimeout(()=>location.assign('kairo/'),900);
+          if(status)status.textContent='ACCESS GRANTED / ENTERING';
+          window.setTimeout(()=>{
+            window.location.href='kairo/index.html';
+          },650);
           return;
         }
         gate?.classList.remove('welcome-denied');
