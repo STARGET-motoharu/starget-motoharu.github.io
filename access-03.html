@@ -1,1 +1,77 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url=index.html"><script>location.replace('index.html')</script><title>STARGET — SYSTEM UPDATE</title></head><body></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="STARGET final access gate." />
+  <title>STARGET — ACCESS 03</title>
+  <link rel="stylesheet" href="kairo/styles.css?v=36" />
+  <script src="access-core.js?v=36"></script>
+  <script>window.STARGET_GATE_STATE=window.STARGET_ACCESS?.guardGate("phrase");</script>
+  <style>
+    html,body{margin:0;min-height:100%;background:#050505}
+    body{min-height:100svh;overflow:hidden}
+    .welcome-gate{position:fixed!important}
+  </style>
+</head>
+<body>
+  <div id="welcomeGate" class="welcome-gate welcome-secondary" role="dialog" aria-modal="true" aria-label="STARGET final access">
+    <div class="welcome-grid" aria-hidden="true"></div>
+    <div class="welcome-scan" aria-hidden="true"></div>
+    <div class="welcome-mark" aria-hidden="true"><span></span></div>
+    <div class="welcome-center">
+      <span id="welcomeIndex" class="welcome-index">ENTRY / 002</span>
+      <strong>STARGET</strong>
+      <small>DIGITAL CULTURE / TOKYO</small>
+    </div>
+    <div class="welcome-meta" aria-hidden="true">
+      <span>GATE / ST-03</span>
+      <span id="gateRole">RANDOMIZED ACCESS</span>
+    </div>
+    <form id="welcomeForm" class="welcome-access" autocomplete="off">
+      <label id="accessLabel" for="welcomeCode">ACCESS / 03</label>
+      <div class="welcome-input-line">
+        <input id="welcomeCode" name="welcomeCode" type="password" inputmode="text" pattern="[A-Za-z0-9-]*" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Enter final alphanumeric access code" />
+        <button type="submit" aria-label="Enter STARGET">ENTER ↗</button>
+      </div>
+      <span id="welcomeStatus" class="welcome-status">A–Z / 0–9 / - / REQUIRED</span>
+    </form>
+  </div>
+  <script>
+    (()=>{
+      const ACCESS_CODE='S-0930';
+      const gateState=window.STARGET_GATE_STATE;
+      if(!gateState)return;
+      const accessNo=window.STARGET_ACCESS.ordinal(gateState);
+      const accessLabel=document.querySelector('#accessLabel');
+      const welcomeIndex=document.querySelector('#welcomeIndex');
+      const gateRole=document.querySelector('#gateRole');
+      if(accessLabel)accessLabel.textContent=`ACCESS / ${accessNo}`;
+      if(welcomeIndex)welcomeIndex.textContent=`ENTRY / ${String(gateState.step-1).padStart(3,'0')}`;
+      if(gateRole)gateRole.textContent=`RANDOMIZED GATE ${accessNo} / 03`;
+      const gate=document.querySelector('#welcomeGate');
+      const form=document.querySelector('#welcomeForm');
+      const input=document.querySelector('#welcomeCode');
+      const status=document.querySelector('#welcomeStatus');
+
+      const deny=()=>{
+        gate?.classList.remove('welcome-denied');void gate?.offsetWidth;gate?.classList.add('welcome-denied');
+        if(status)status.textContent=`ACCESS ${accessNo} DENIED`;
+        if(input){input.value='';input.focus();}
+        window.setTimeout(()=>{if(status)status.textContent='A–Z / 0–9 / - / REQUIRED';},1100);
+      };
+      window.setTimeout(()=>input?.focus(),450);
+      input?.addEventListener('input',()=>{input.value=input.value.toUpperCase().replace(/[^A-Z0-9-]/g,'');});
+      form?.addEventListener('submit',(event)=>{
+        event.preventDefault();
+        if((input?.value||'').trim().toUpperCase()!==ACCESS_CODE){deny();return;}
+        gate?.classList.add('welcome-granted');
+        const next=window.STARGET_ACCESS.completeGate('phrase');
+        if(status)status.textContent=`ACCESS ${accessNo} GRANTED / ROUTING`;
+        window.setTimeout(()=>{window.location.href=next;},650);
+      });
+    })();
+  </script>
+</body>
+</html>

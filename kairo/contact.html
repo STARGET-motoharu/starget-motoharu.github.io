@@ -1,1 +1,88 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url=../index.html"><script>location.replace('../index.html')</script><title>STARGET — SYSTEM UPDATE</title></head><body></body></html>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <script src="../session-guard.js?v=36"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="STARGET project inquiry form." />
+  <title>STARGET — CONTACT</title>
+  <link rel="stylesheet" href="styles.css?v=31" />
+</head>
+<body class="contact-page">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="site-header contact-page-header">
+    <a class="brand-mini" href="index.html" aria-label="STARGET top"><span class="brand-mark"></span><span>STARGET</span></a>
+    <div class="header-center"><span>PROJECT INQUIRY</span> — <span>TOKYO / JAPAN</span></div>
+    <a class="archive-close" href="index.html#contact">CLOSE ×</a>
+  </header>
+
+  <main class="contact-page-main">
+    <section class="contact-form-hero" aria-labelledby="contactTitle">
+      <div class="contact-form-grid" aria-hidden="true"></div>
+      <div class="contact-form-scan" aria-hidden="true"></div>
+
+      <div class="contact-form-intro contact-page-reveal">
+        <span class="contact-form-kicker">10-A / CONTACT PROTOCOL</span>
+        <div class="contact-form-status"><i></i><span>INQUIRY CHANNEL / READY</span></div>
+        <h1 id="contactTitle">CREATE<br>SOMETHING<br><span>NEW.</span></h1>
+        <p>CG、モーション、3DCG、映像、ビジュアルディレクションなどのご相談はこちらから。必要事項を入力してください。</p>
+        <div class="contact-form-meta">
+          <div><span>LOCATION</span><strong>TOKYO / JAPAN</strong></div>
+          <div><span>LANGUAGE</span><strong>JP / EN</strong></div>
+          <div><span>FORMAT</span><strong>PROJECT INQUIRY</strong></div>
+        </div>
+      </div>
+
+      <div class="contact-form-panel contact-page-reveal">
+        <div class="form-topline"><span>INPUT / 04 FIELDS</span><span id="formProgress">00%</span></div>
+        <form id="contactForm" class="inquiry-form" novalidate>
+          <label class="field-shell" data-field="name">
+            <span class="field-index">01</span>
+            <span class="field-copy"><b>NAME</b><small>お名前 / 必須</small></span>
+            <input id="contactName" name="name" type="text" autocomplete="name" maxlength="80" placeholder="Your name" required />
+            <i class="field-node" aria-hidden="true"></i>
+          </label>
+
+          <label class="field-shell" data-field="subject">
+            <span class="field-index">02</span>
+            <span class="field-copy"><b>SUBJECT</b><small>件名 / 必須</small></span>
+            <input id="contactSubject" name="subject" type="text" maxlength="120" placeholder="Project / collaboration / other" required />
+            <i class="field-node" aria-hidden="true"></i>
+          </label>
+
+          <label class="field-shell" data-field="contact">
+            <span class="field-index">03</span>
+            <span class="field-copy"><b>CONTACT</b><small>連絡先 / 任意</small></span>
+            <input id="contactMethod" name="contact" type="text" autocomplete="email" maxlength="160" placeholder="Email / X / Discord / etc." />
+            <i class="field-node" aria-hidden="true"></i>
+          </label>
+
+          <label class="field-shell field-message" data-field="message">
+            <span class="field-index">04</span>
+            <span class="field-copy"><b>DETAILS</b><small>内容 / 必須</small></span>
+            <textarea id="contactMessage" name="message" rows="8" maxlength="2000" placeholder="Project outline, schedule, deliverables, budget range, references..." required></textarea>
+            <span class="field-count"><b id="messageCount">0000</b> / 2000</span>
+            <i class="field-node" aria-hidden="true"></i>
+          </label>
+
+          <div class="form-action-row">
+            <div class="form-note">送信先は管理アプリ / Worker 接続時に有効化できます。</div>
+            <button class="inquiry-submit" type="submit" disabled aria-disabled="true">
+              <span>SEND INQUIRY</span><b>↗</b>
+            </button>
+          </div>
+          <div class="form-response" id="formResponse" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact-page-footer"><div>STARGET / TOKYO</div><div>CONTACT / PROJECT INQUIRY</div><div>© 20XX STARGET <span class="footer-dot"></span></div></footer>
+  <script src="contact-config.js"></script>
+  <script src="contact.js?v=31"></script>
+</body>
+</html>
