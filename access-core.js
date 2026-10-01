@@ -126,6 +126,10 @@
     const nextStep=state.step+1;
     ss.setItem(KEYS.step,String(nextStep));
     touch(true);
+    const events={pin:'access_01_granted',origin:'origin_granted',phrase:'access_03_granted'};
+    if(events[gateId]&&typeof window.gtag==='function'){
+      window.gtag('event',events[gateId],{gate_step:nextStep,gate_total:state.order.length});
+    }
     if(nextStep>=state.order.length){
       ss.setItem(KEYS.complete,'1');
       return 'kairo/index.html';
